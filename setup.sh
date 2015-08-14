@@ -3,6 +3,10 @@ LOGSTASHPATH="/root/atlantis-analytics"
 REPONAME="logstash-atlantis-supervisor"
 REPOPATH="${LOGSTASHPATH}/${REPONAME}"
 SCRIPTSDIR="${REPOPATH}/scripts"
+SETUPSCRIPTS="${SCRIPTSDIR}/setup"
 
-sh "${SCRIPTSDIR}/install-java8.sh"
-sh "${SCRIPTSDIR}/logstash-setup.sh"
+for f in $SETUPSCRIPTS/*.sh; do
+
+	echo "Executing setup script: $f"
+	sh $f
+done

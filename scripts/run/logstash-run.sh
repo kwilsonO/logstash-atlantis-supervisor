@@ -6,5 +6,11 @@ LOGSTASHDIR="${LOGSTASHPATH}/${LOGSTASHVER}"
 CONFIGDIR="${LOGSTASHPATH}/config-files"
 LOGPATH="/var/log/atlantis/logstash"
 
-rm "${LOGPATH}/*"
+if [ -e "${LOGPATH}/out.log" ] then 
+	rm "${LOGPATH}/out.log"
+fi
+if [ -e "${LOGPATH}/err.log" ] then 
+	rm "${LOGPATH}/err.log"
+fi
+
 $LOGSTASHDIR/bin/logstash -f "${CONFIGDIR}/${REPONAME}.conf" > $LOGPATH/out.log 2> $LOGPATH/err.log &
