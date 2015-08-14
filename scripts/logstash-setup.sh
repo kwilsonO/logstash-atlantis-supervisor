@@ -1,4 +1,12 @@
-wget "https://download.elastic.co/logstash/logstash/logstash-1.5.3.tar.gz"
-tar -xzf logstash-1.5.3.tar.gz
-rm logstash-1.5.3.tar.gz
-#mv logstash-1.5.3 /root/atlantis-analytics/logstash-atlantis-router-internal/
+LOGSTASHVER="logstash-1.5.3"
+LOGSTASHDL="https://download.elastic.co/logstash/logstash/${LOGSTASHVER}.tar.gz"
+LOGSTASHPATH="/root/atlantis-analytics"
+REPONAME="logstash-atlantis-supervisor"
+REPOPATH="${LOGSTASHPATH}/${REPONAME}"
+LOGPATH="/var/log/atlantis/logstash"
+
+wget "${LOGSTASHDL}"
+tar -xzf "${LOGSTASHVER}.tar.gz"
+rm "${LOGSTASHVER}.tar.gz"
+mv "${LOGSTASHVER}" "${REPOPATH}"
+mkdir "${LOGPATH}"

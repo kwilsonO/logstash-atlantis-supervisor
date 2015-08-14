@@ -1,2 +1,8 @@
-sh /root/atlantis-analytics/logstash-atlantis-supervisor/scripts/install-java8.sh
-sh /root/atlantis-analytics/logstash-atlantis-supervisor/scripts/logstash-setup.sh
+LOGSTASHVER="logstash-1.5.3"
+LOGSTASHPATH="/root/atlantis-analytics"
+REPONAME="logstash-atlantis-supervisor"
+REPOPATH="${LOGSTASHPATH}/${REPONAME}"
+SCRIPTSDIR="${REPOPATH}/scripts"
+
+sh "${SCRIPTSDIR}/install-java8.sh"
+sh "${SCRIPTSDIR}/logstash-setup.sh"
