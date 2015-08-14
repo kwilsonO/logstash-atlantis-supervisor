@@ -6,6 +6,8 @@ LOGSTASHDIR="${LOGSTASHPATH}/${LOGSTASHVER}"
 CONFIGDIR="${LOGSTASHPATH}/config-files"
 LOGPATH="/var/log/atlantis/logstash"
 
+export SINCEDB_DIR="$REPOPATH"
+
 if [ -e "${LOGPATH}/out.log" ] then 
 	rm "${LOGPATH}/out.log"
 fi
