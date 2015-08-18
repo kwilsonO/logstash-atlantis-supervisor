@@ -5,6 +5,6 @@ if [ "${myid}" = "" ]; then
 	echo "No logstash process found."
 else
 
-	echo "[${myid}] atlantis-router logstash running."
+	echo "[${myid}] atlantis-supervisor logstash running."
 
 fi
